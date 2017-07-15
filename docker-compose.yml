@@ -1,0 +1,55 @@
+version: "3"
+
+networks:
+  database:
+  web:
+
+volumes:
+  mysql-data:
+  source:
+
+services:
+  php:
+    image: gtrader/latest
+    volumes:
+      - source:/gtrader
+      - /etc/localtime:/etc/localtime:ro
+    expose:
+      - '9000'
+    restart: always
+    networks:
+      - database
+      - web
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - /etc/localtime:/etc/localtime:ro
+    expose:
+      - '3306'
+    restart: always
+    networks:
+      - database
+    environment:
+      MYSQL_ROOT_PASSWORD: gtrader
+      MYSQL_USER: gtrader
+      MYSQL_PASSWORD: gtrader
+      MYSQL_DATABASE: gtrader
+
+  nginx:
+    build:
+      context: ..
+      dockerfile: nginx.Dockerfile
+    ports:
+      - "$LISTEN_HOST:$LISTEN_PORT:443"
+    volumes:
+      - source:/gtrader:ro
+      - /etc/localtime:/etc/localtime:ro
+    restart: always
+    networks:
+      - web
+    depends_on:
+      - php
