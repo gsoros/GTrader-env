@@ -14,3 +14,6 @@
 A default user will have been created with email: ```gtrader@localhost``` and password: ```gtrader```.
 
 After the first log-in GTrader will start fetching candlestick data from the exchanges.
+
+# License
+[GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html)
