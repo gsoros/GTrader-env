@@ -41,7 +41,7 @@ services:
 
   nginx:
     build:
-      context: ..
+      context: .
       dockerfile: nginx.Dockerfile
     ports:
       - "$LISTEN_HOST:$LISTEN_PORT:443"
