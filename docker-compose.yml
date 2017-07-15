@@ -10,7 +10,7 @@ volumes:
 
 services:
   php:
-    image: gtrader:latest
+    image: gsoros/gtrader:latest
     volumes:
       - source:/gtrader
       - /etc/localtime:/etc/localtime:ro
