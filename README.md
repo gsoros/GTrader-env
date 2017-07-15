@@ -7,7 +7,7 @@ GTrader + MySQL + Nginx-SSL
 ## Installation
 1. ```git clone https://github.com/gsoros/GTrader-env.git```
 2. ```cd GTrader-env```
-3. Optional: edit .env to configure interface and port. E.g. if you want GTrader to listen on all iterfaces at the default HTTPS port, enter ```LISTEN_HOST=0.0.0.0``` and ```LISTEN_PORT=443```
+3. Optional: edit .env to configure interface and port. E.g. if you want GTrader to listen on all interfaces at the default HTTPS port, enter ```LISTEN_HOST=0.0.0.0``` and ```LISTEN_PORT=443```
 2. ```docker-compose up -d```
 3. Point your browser to [https://localhost:44333/](https://localhost:44333/)
 
