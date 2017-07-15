@@ -1,5 +1,5 @@
 # GTrader-env
-GTrader + MySQL + Nginx-SSL
+[GTrader](https://github.com/gsoros/GTrader) + MySQL + Nginx-SSL
 
 ## Requirements
 * A recent version of [Docker](https://store.docker.com/search?type=edition&offering=community) and [docker-compose](https://docs.docker.com/compose/install/)
