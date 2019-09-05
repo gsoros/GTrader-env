@@ -7,10 +7,15 @@ networks:
 volumes:
   mysql-data:
   source:
+    driver: local
+    driver_opts:
+      type: none
+      device: $PWD/../GTrader
+      o: bind
 
 services:
   php:
-    image: gsoros/gtrader:latest
+    build: ../GTrader
     volumes:
       - source:/gtrader
       - /etc/localtime:/etc/localtime:ro
