@@ -11,7 +11,7 @@
 4. ```docker-compose up -d```
 5. Point your browser to [https://localhost:44333/](https://localhost:44333/)
 
-A default user will have been created with email: ```gtrader@localhost``` and password: ```gtrader```.
+A default user will have been created with email: ```gtrader@localhost``` and an empty password.
 
 After the first log-in GTrader will start fetching candlestick data from the exchanges.
 

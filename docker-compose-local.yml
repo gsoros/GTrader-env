@@ -10,12 +10,15 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: $PWD/../GTrader
+      device: $PWD/../GTrader-docker
       o: bind
 
 services:
   php:
-    build: ../GTrader
+    build:
+      context: ../GTrader
+      args:
+        GTRADER_UID: $GTRADER_UID
     volumes:
       - source:/gtrader
       - /etc/localtime:/etc/localtime:ro
