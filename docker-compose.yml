@@ -46,7 +46,7 @@ services:
     ports:
       - "$LISTEN_HOST:$LISTEN_PORT:443"
     volumes:
-      - source:/gtrader:ro
+      - source:/gtrader:z
       - /etc/localtime:/etc/localtime:ro
     restart: always
     networks:
